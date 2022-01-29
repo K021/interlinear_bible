@@ -1,5 +1,5 @@
 # Crawler for Online Interlinear Bible
-Crawl Interlinear Bible from https://www.scripture4all.org/
+a Crawler for Interlinear Bible from https://www.scripture4all.org/
 Both Hebrew Interlinear Bible and Greek Interlinear Bible
 
 ## requirements
