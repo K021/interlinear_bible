@@ -50,7 +50,8 @@ class CrawlerBase(LoggingMixin):
         unique_filepath = self._get_unique_filepath(filepath)
         with open(unique_filepath, "wb") as f:
             f.write(request.content)
-            self.logger.info(f"Downloaded {unique_filepath}")
+
+        self.logger.info(f"Downloaded {unique_filepath}")
 
     def _get_unique_filepath(self, path: Path) -> Path:
         unique_path = path
