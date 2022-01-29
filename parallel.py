@@ -1,9 +1,11 @@
 import time
-import threading
+from threading import Thread
 from typing import Any, Callable, Dict, List
 
 
 class Parallel:
+    """A class to run a function with multiple inputs in parallel."""
+
     def __init__(
         self,
         func: Callable,
@@ -22,7 +24,7 @@ class Parallel:
             (set 0.05 seconds for http requests)
         """
         threads = [
-            threading.Thread(target=self.func, kwargs=kwargs)
+            Thread(target=self.func, kwargs=kwargs)
             for kwargs in self.kwargs_list
         ]
         for thread in threads:

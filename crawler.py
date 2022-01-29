@@ -89,7 +89,7 @@ class OIBCrawler(CrawlerBase):
     def _is_NTpdf_url(self, href: str) -> bool:
         return href and self.PATTERN_NTPDF_URL.match(href)
 
-    def _crawl_hrefs_OTpdf(self) -> List:
+    def _crawl_hrefs_OTpdf(self) -> List[str]:
         request = requests.get(self.URL_HEBREW_INDEX)
         soup = BeautifulSoup(request.text, "lxml")
 
@@ -98,7 +98,7 @@ class OIBCrawler(CrawlerBase):
 
         return hrefs_OTpdf
 
-    def _crawl_hrefs_NTpdf(self) -> List:
+    def _crawl_hrefs_NTpdf(self) -> List[str]:
         request = requests.get(self.URL_GREEK_INDEX)
         soup = BeautifulSoup(request.text, "lxml")
 
